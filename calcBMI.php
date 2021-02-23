@@ -32,14 +32,15 @@ if(!empty($_POST['weight'])&&!empty($_POST['height'])){
 <?php
 //echo $_SERVER['SCRIPT_NAME'];
 function reflesh(){
-  $_SESSION['hight']=null;
-  $_SESSION['weight']=null;
-  $_SESSION['BMI']=null;
-  $height=null;
-  $weight=null;
-  $BMI=null;
+  unset($_SESSION['hight']);
+  unset($_SESSION['weight']);
+  unset($_SESSION['BMI']);
+  unset($height);
+  unset($weight);
+  unset($BMI);
 }
-if(!empty($_POST['reflesh'])){
+//If reflesh or save button clicked, clear the content of varriants.
+if(!empty($_POST['reflesh']) || !empty($_POST['save'])){
   reflesh();
 }
 ?>
