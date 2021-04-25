@@ -1,5 +1,5 @@
 <?php
-session_start();
+session_start(); //<!doctype html>の前にsession_start()を記述する。
  ?>
 <!doctype html>
 <html>
@@ -32,7 +32,21 @@ echo "<br><br>";
   if(isset($_POST['makers'])){
     $val=$_POST['makers'];
   }
-  echo "選ばれたのは{$val}でした。";
+  echo "選ばれたのは{$val}でした。<br><br>";
+
+  if(isset($_SESSION['count'])&&$_SESSION['count']>=10){
+    unset($_SESSION['count']);
+    echo "あなたこのサイト出禁です。";
+    $_SESSION['prohibit']=true;
+  }elseif(isset($_SESSION['count']) ){
+    $_SESSION['count']++;
+    echo "あなたがこのサイトを訪問するのは{$_SESSION['count']}回目ですね???";
+  }elseif(isset($_SESSION['prohibit'])&&$_SESSION['prohibit']==true){
+    echo "なんで来たんですか???";
+  }else{
+    $_SESSION['count']=1;
+    echo "あなたは初訪問ですね???";
+  }
  ?>
 </body>
 </html>
