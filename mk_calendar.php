@@ -82,7 +82,7 @@ for($j=1;$j<=$ld;$j++){
 
 echo "</tr>";
 echo "</table>";
-echo $l;
+
 ?>
 </body>
 </html>
