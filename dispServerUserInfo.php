@@ -20,7 +20,7 @@ echo "<tr><td>$sv</td><td>{$_SERVER[$sv]}</td></tr><br>";
 <table border=2><tr style="background-color:#AAAAAA"><td>Server info</td><td>Content</td></tr>
 <?php
 $user=array('REMOTE_ADDR','HTTP_USER_AGENT','SERVER_PROTOCOL','REQUEST_METHOD','REQUEST_URI','HTTP_REFERER');
-//,'REMOTE_HOST','HTTP_REFERER','REQUEST_URI' cannot be displayed.
+//,'REMOTE_HOST','HTTP_REFERER','REQUEST_URI' cannot be displayed(Modified).
 foreach($user as $us){
   if ($us!="HTTP_REFERER") {
     echo "<tr><td>$us</td><td>{$_SERVER[$us]}</td></tr><br>";
